@@ -1,6 +1,6 @@
 export function omit<T extends object, K extends [...(keyof T)[]]>(
   obj: T,
-  keys: K
+  keys: K,
 ): {
   [K2 in Exclude<keyof T, K[number]>]: T[K2];
 } {
@@ -13,4 +13,4 @@ export function omit<T extends object, K extends [...(keyof T)[]]>(
   for (key in obj) if (!keys.includes(key)) ret[key] = obj[key];
 
   return ret;
-};
+}

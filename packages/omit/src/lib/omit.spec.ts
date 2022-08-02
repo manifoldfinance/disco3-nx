@@ -1,6 +1,5 @@
 import { omit } from './omit';
 
-
 describe('omits', () => {
   it('a single key', () => {
     const source = {
