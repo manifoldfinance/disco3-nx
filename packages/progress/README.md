@@ -30,6 +30,4 @@ NProgress({
 });
 ```
 
-It's worth noting that the finish handler will always automatically fire an analytics page event as long as the window.analytics object is present.
-
-Make sure to remember the css import as well!
+> It's worth noting that the finish handler will always automatically fire an analytics page event as long as the window.analytics object is present.
