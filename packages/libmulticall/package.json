@@ -1,0 +1,8 @@
+{
+  "name": "@disco3-nx/libmulticall",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "devDependencies": {
+    "use-sync-external-store": "^1.2.0"
+  }
+}
