@@ -1,0 +1,28 @@
+{
+  "name": "@disco3-nx/libhooks",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/index.es.js",
+    "default": "./dist/index.es.js"
+  },
+  "module": "dist/index.es.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build",
+    "postbuild": "yarn typegen",
+    "#test": "vitest",
+    "typecheck": "tsc",
+    "typegen": "tsc --noEmit false --emitDeclarationOnly || true",
+    "lint": "eslint src",
+    "format": "prettier --write src",
+    "clean": "rm -rf dist node_modules .turbo"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "tinykeys": "^1.4.0"
+  }
+}

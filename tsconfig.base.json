@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@disco3-nx/libhooks": ["packages/libhooks/src/index.ts"],
       "@disco3-nx/libmulticall": ["packages/libmulticall/src/index.ts"],
       "@disco3-nx/omit": ["packages/omit/src/index.ts"],
       "@disco3-nx/progress": ["packages/progress/src/index.ts"]
