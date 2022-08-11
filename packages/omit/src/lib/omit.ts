@@ -1,4 +1,4 @@
-export function omit<T extends object, K extends [...(keyof T)[]]>(
+export function Omit<T extends object, K extends [...(keyof T)[]]>(
   obj: T,
   keys: K,
 ): {
@@ -14,3 +14,8 @@ export function omit<T extends object, K extends [...(keyof T)[]]>(
 
   return ret;
 }
+
+export type Maybe<T> = T | null;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
