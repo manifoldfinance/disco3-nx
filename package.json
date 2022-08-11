@@ -2,8 +2,18 @@
   "name": "disco3-nx",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "jest",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test:ci": "jest -u --passWithNoTests --coverageDirectory .github/coverage",
+    "format": "prettier --config .prettierrc.js --write \"**/*.{ts,tsx,md}\"",
+  },
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@nrwl/node": "^14.5.1",
     "tslib": "^2.3.0"
@@ -26,6 +36,7 @@
     "prettier": "^2.6.2",
     "ts-jest": "27.1.4",
     "ts-node": "~10.8.0",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "turbo": "latest"
   }
 }
