@@ -1,12 +1,27 @@
 {
   "name": "disco3-nx",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "test": "jest",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test:ci": "jest -u --passWithNoTests --coverageDirectory .github/coverage",
+    "format": "prettier --config .prettierrc.js --write \"**/*.{ts,tsx,md}\"",
+    "baseline": "npx tsc --extendedDiagnostics",
+    "explain": "npx tsc --explainFiles > explanation.txt",
+    "trace": "npx tsc --traceResolution > resolution.txt",
+    "profile": "node --trace-ic ./node_modules/typescript/lib/tsc.js --generateCpuProfile profile.cpuprofile -p tsconfig.json",
+    "tracer": "mkdir -p tmp_folder/ && npx tsc -p ./tsconfig.json --generateTrace tmp_folder"
+  },
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@nrwl/node": "^14.5.1",
-    "tslib": "^2.3.0"
+    "@swc-node/register": "^1.5.1"
   },
   "devDependencies": {
     "@nrwl/cli": "14.5.1",
@@ -18,14 +33,31 @@
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
+    
     "jest": "27.5.1",
     "nx": "14.5.1",
     "prettier": "^2.6.2",
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@swc-node/core": "^1.9.0",
+    "@swc-node/jest": "^1.5.2",
+    "@types/babel__core": "^7.1.19",
+    "@typescript-eslint/parser": "^5.33.1",
+    "@typescript/analyze-trace": "^0.9.0",
+    "babel-plugin-macros": "^3.1.0",
+    "process-tracing": "^1.0.2",
+    "eslint": "^8.22.0",
+    "eslint-plugin-functional": "^4.2.2",
+    "tsutils": "^3.21.0",
+    "typecheck.macro": "^0.7.3",
+    "typescript": "^4.7.4",
+    "typescript-eslint-language-service": "^5.0.0",
     "ts-jest": "27.1.4",
     "ts-node": "~10.8.0",
-    "typescript": "~4.7.2"
+    "tslib": "^2.3.0",
+    "turbo": "latest"
   }
 }
