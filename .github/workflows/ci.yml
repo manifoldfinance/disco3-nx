@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    name: Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.4
+    with:
+      parallel-commands-on-agents: |
+        npx lerna run build
+        npx lerna run test
+  agents:
+    name: Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.4
+    with:
+      number-of-agents: 30
